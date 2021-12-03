@@ -26,10 +26,10 @@ if tipo == "POST":
 
     print(response_post)
     print(response_post.json())
-    print(" ")
-    print("Tasks atualizadas: ")
-    response_get = requests.get('http://'+dns+':80/tasks/all_tasks/')
-    print(response_get.json())
+    # print(" ")
+    # print("Tasks atualizadas: ")
+    # response_get = requests.get('http://'+dns+':80/tasks/all_tasks/')
+    # print(response_get.json())
 
 
 if tipo == "DELETE":
@@ -37,7 +37,7 @@ if tipo == "DELETE":
     response_delete = requests.delete('http://'+dns+':80/tasks/tasks/'+pk)
     print(response_delete)
     print(response_delete.json())
-    print(" ")
-    print("Tasks atualizadas: ")
-    response_get = requests.get('http://'+dns+':80/tasks/all_tasks/')
-    print(response_get.json())
+    # print(" ")
+    # print("Tasks atualizadas: ")
+    # response_get = requests.get('http://'+dns+':80/tasks/all_tasks/')
+    # print(response_get.json())
