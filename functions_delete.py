@@ -22,15 +22,13 @@ def delete_launch(local, launch_name):
             ],
         )
 
-        # print(lc['LaunchConfigurations'][0]['LaunchConfigurationName'])
-
         if lc['LaunchConfigurations'][0]['LaunchConfigurationName'] == launch_name:
 
             autoscaling_client.delete_launch_configuration(
                 LaunchConfigurationName=launch_name
             )
 
-            print("apagou launch")
+            print("Deleting the old launch configuration")
 
     except Exception as e:
         print("There is no launch group to be deleted")
@@ -77,7 +75,7 @@ def delete_asg_instances(local, autoScaling_name):
                     ForceDelete=True
                 )
 
-                print('apagou autoscaling')
+                print('Deleting the old Autoscaling Group')
 
     except Exception as e:
         print("There is no auto scaling group to be deleted")
@@ -101,10 +99,10 @@ def delete_targetgroup(local, targetGroupName):
         if tg['TargetGroups'][0]['TargetGroupName'] == targetGroupName:
             tg_arn = tg['TargetGroups'][0]['TargetGroupArn']
             elb_client.delete_target_group(TargetGroupArn = tg_arn)
-            print("apagou target group")
+            print("Deleting the old Target Group")
 
     except Exception as e:
-            print("There is no target group to be deleted")
+            print("There is no Target Group to be deleted")
 
 # deleta o load balancer e listeners
 def delete_loadbalancer_listener(local, name):
@@ -128,10 +126,10 @@ def delete_loadbalancer_listener(local, name):
                     elb_client.delete_listener(ListenerArn=listener_arn)
 
                 elb_client.delete_load_balancer(LoadBalancerArn=lbId)
-                print("apagou load balancer e listener")
+                print("Deleting the old Load Balancer and Listener")
             
     except Exception as e:
-        print(e)
+        print("There is no Load Balancer and Listener to be deleted")
 
 # Deleta uma instancia
 def delete_instance(client, instance_name):

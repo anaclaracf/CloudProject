@@ -1,0 +1,26 @@
+2021-12-03 11:23:17,600 - INFO - Starting the program...
+2021-12-03 11:23:17,602 - INFO - Deleting the old structures...
+2021-12-03 11:23:24,191 - INFO - Structures deleted!
+2021-12-03 11:23:24,192 - INFO - Creating a Postgres instance in Ohio
+2021-12-03 11:23:26,010 - INFO - Key pair created, name: chave
+2021-12-03 11:23:26,013 - INFO - A .pem file with the key created, name: chave.pem
+2021-12-03 11:24:15,564 - INFO - Security group for the instance ohio-postgres created, name: sg_OHIO
+2021-12-03 11:24:17,418 - INFO - Postgres instance in Ohio created!
+2021-12-03 11:24:17,422 - INFO - Creating the Django instance in North Virginia
+2021-12-03 11:24:19,314 - INFO - Key pair created, name: key
+2021-12-03 11:24:19,317 - INFO - A .pem file with the key created, name: key.pem
+2021-12-03 11:24:21,353 - INFO - Security group for the instance nv-django created, name: sg_NV
+2021-12-03 11:24:25,135 - INFO - Django instance in North Virginia created!
+2021-12-03 11:24:25,138 - INFO - Waiting for the Django instance to be running...
+2021-12-03 11:24:56,018 - INFO - Django instance ready!
+2021-12-03 11:24:56,020 - INFO - Creating an AMI image
+2021-12-03 11:29:29,455 - INFO - Waiting for the AMI image to be ready...
+2021-12-03 11:29:29,455 - INFO - AMI image ready!
+2021-12-03 11:29:29,457 - INFO - Deleting the instance nv-django
+2021-12-03 11:30:02,563 - INFO - Django instance deleted
+2021-12-03 11:30:05,501 - INFO - Load Balancer created, name: loadBalancerNV
+2021-12-03 11:30:05,886 - INFO - Target Group created, name: grpTargetNV
+2021-12-03 11:30:06,085 - INFO - Listener created
+2021-12-03 11:30:08,146 - INFO - Auto Scaling group created, name: autoScaling-nv
+2021-12-03 11:30:09,100 - INFO - Policy created, name: NV-autoscaling-policy for the Auto Scaling group autoScaling-nv
+2021-12-03 11:30:09,103 - INFO - End of the program
